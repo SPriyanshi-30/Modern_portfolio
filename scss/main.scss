@@ -1,5 +1,5 @@
-@import "config";
-@import "menu";
+@import "config.scss";
+@import "menu.scss";
 
 * {
   box-sizing: border-box;
@@ -25,14 +25,93 @@ h3 {
   &.lg-heading {
     font-size: 6rem;
   }
-
-  &.sm-heading {
+  .rw-wrapper {
+    width: 80%;
+    position: relative;
+    margin: 110px auto 0 auto;
+    font-family: "Bree Serif";
+    padding: 10px;
+  }
+  .rw-sentence {
+    margin: 0;
+    text-align: left;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+  }
+  .rw-sentence span {
+    color: #eece1a;
+    white-space: nowrap;
+    font-size: 200%;
+    font-weight: normal;
+  }
+  .rw-words {
+    display: inline;
+    text-indent: 10px;
+  }
+  .rw-words span {
+    position: absolute;
+    opacity: 0;
+    overflow: hidden;
+    width: 100%;
+    color: #eece1a;
+  }
+  .rw-words-1 span {
+    animation: rotateWordsFirst 18s linear infinite 0s;
+  }
+  .rw-words-2 span {
+    animation: rotateWordsSecond 28s linear infinite 0s;
+  }
+  .rw-words span:nth-child(2) {
+    animation-delay: 4s;
+    color: #eece1a;
+  }
+  .rw-words span:nth-child(3) {
+    animation-delay: 8s;
+    color: #eece1a;
+  }
+  .rw-words span:nth-child(4) {
+    animation-delay: 12s;
+    color: #eece1a;
+  }
+  .rw-words span:nth-child(5) {
+    animation-delay: 16s;
+    color: #eece1a;
+  }
+  .rw-words span:nth-child(6) {
+    animation-delay: 20s;
+    color: #eece1a;
+  }
+  .rw-words span:nth-child(7) {
+    animation-delay: 24s;
+    color: #eece1a;
+  }
+  @keyframes rotateWordsSecond {
+    0% {
+      opacity: 1;
+      animation-timing-function: ease-in;
+      width: 0px;
+    }
+    10% {
+      opacity: 0.3;
+      width: 0px;
+    }
+    20% {
+      opacity: 1;
+      width: 100%;
+    }
+    27% {
+      opacity: 0;
+      width: 100%;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+/*&.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
     background: rgba(lighten($primary-color, 2), 0.5);
-  }
-}
-
+  }*/
 a {
   color: #fff;
   text-decoration: none;
@@ -188,5 +267,4 @@ main {
   color: set-text-color($primary-color);
   height: 60px;
 }
-
-@import "mobile";
+@import "mobile.scss";
